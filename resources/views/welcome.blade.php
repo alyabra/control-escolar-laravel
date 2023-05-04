@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Hola') }}
+        </h2>
+    </x-slot>
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        @vite(['resources/css/app.css'])
-    </head>
-    <body class="antialiased">
-        <div class="">
-            <h1 class="bg-gray-600">Control escolar</h1>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    {{ __("Bienvenido al sistema administativa") }}
+                </div>
+                <div>
+                    <p>Si eres administrativo podras registrar nuevas clases y administrarlas</p>
+                    <p>Si eres un pofresor podras registrar calificaciones de tus alumnos y agregar tareas</p>
+                    <p>Si eres estudiante podras revisar tu calificación y consultar tareas</p>
+                </div>
+            </div>
         </div>
-    </body>
-</html>
+    </div>
+</x-app-layout>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clase;
 use Illuminate\Http\Request;
 
 class ClaseController extends Controller
@@ -11,7 +12,7 @@ class ClaseController extends Controller
      */
     public function index()
     {
-        //
+        return view('clases.index');
     }
 
     /**
@@ -19,7 +20,7 @@ class ClaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('clases.create');
     }
 
     /**
@@ -33,9 +34,12 @@ class ClaseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Clase $clase)
     {
         //
+        return view('clases.show', [
+            'clase' => $clase
+        ]);
     }
 
     /**

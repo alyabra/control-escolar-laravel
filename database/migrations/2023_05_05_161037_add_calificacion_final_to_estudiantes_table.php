@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('listaAlumnos', function (Blueprint $table) {
-            $table->foreignId('clase_id')->constrained()->onDelete('cascade');
+        Schema::table('estudiantes', function (Blueprint $table) {
+            $table->integer('calificacionFinal')->nullable()->default(null);;
         });
     }
 
@@ -21,10 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('listaAlumnos', function (Blueprint $table) {
-            //
-            $table->dropForeign('lista_alumnos_clase_id_foreign');
-            $table->dropColumn(['clase_id']);
+        Schema::table('estudiantes', function (Blueprint $table) {
+            $table->dropColumn('calificacionFinal');
         });
     }
 };

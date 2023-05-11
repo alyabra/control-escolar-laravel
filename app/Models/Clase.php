@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Estudiante;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,20 +12,19 @@ class Clase extends Model
     use HasFactory;
     protected $fillable = [
         'nombre',
-        'profesor_id',
+        'user_id',
         'creditos',
     ];
 
     public function estudiantes()
     {
+        // dd('antes del error');
         return $this->hasMany(Estudiante::class);
     }
 
-    public function docente()
+    public function user()
     {
-        // dd($this->belongsTo(User::class), $this->belongsTo(User::class)->select(['name']));
-
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function getNombre() 

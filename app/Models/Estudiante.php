@@ -9,16 +9,19 @@ class Estudiante extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'estudiante_id',
+        'user_id',
         'clase_id',
         'regular',
+        'calificacionFinal'
     ];
+
 
     public function user()
     {
-        // dd($this->belongsTo(User::class), $this->belongsTo(User::class)->select(['name']));
-
         return $this->belongsTo(User::class)->select(['name']);
+
     }
+
+
 }
 // 

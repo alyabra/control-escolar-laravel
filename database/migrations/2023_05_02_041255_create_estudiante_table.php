@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('estudiantes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('clase_id')->constrained()->onDelete('cascade');
-            $table->foreignId('estudiante_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('regular');
             $table->timestamps();
+
+            $table->unique(['clase_id', 'user_id']);
         });
     }
 

@@ -3,11 +3,25 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Lista de clase') }}
         </h2>
+        <h3>
+            {{$clase->nombre}}
+        </h3>
+        <p>{{$clase->user->name}}</p>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div>
+                @if(session()->has('mensaje'))
+                    <p>ddd</p>
+                    {{-- <div class="">
+                    {{ session('mensaje') }}
+                    </div> --}}
+                    @else
+                        <p>no mensaje</p>
+                @endif
+            
+
                 <p>Lista de alumnos aqui</p>
                     <livewire:lista-estudiantes :clase="$clase">
             </div>

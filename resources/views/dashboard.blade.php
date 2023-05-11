@@ -12,7 +12,7 @@
                     <div class="space-y-4">
                         <h2>Edición de clases</h2>
                         <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 bg-slate-300" :href="route('clases.create')">
-                            {{ __('Agregar clase') }}
+                            {{ __('Agregar clases') }}
                         </x-responsive-nav-link>
                         <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 bg-slate-300" :href="route('clases.index')">
                                 {{ __('Editar clases') }}

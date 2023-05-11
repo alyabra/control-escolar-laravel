@@ -20,15 +20,11 @@ class CrearClase extends Component
         $datos = $this->validate();
         Clase::create([
             'nombre' => $datos['asignatura'],
-            'profesor_id' => $datos['docente'],
+            'user_id' => $datos['docente'],
             'creditos' => 12,
         ]);
-        // Mensaje de confirmacion
-        // session()->flash('mensaje', 'Nueva clase registrada, ahora puedes agregar los estudiantes');
-
+        // TODO: Crear mensaje flash de confirmacion
         return redirect()->route('clases.index');
-
-        // dd('creando');
     }
     public function render()
     {

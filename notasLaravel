@@ -1,0 +1,9 @@
+MIGRACIONES
+    Agregar una columna a un tabla
+    >sail artisan make:migration add_<nombreColumna>_to_<nombreTabla>_table
+    Ejemplo->agregar la columna rol a la tabla de usuarios
+    >sail artisan make:migration add_rol_to_users_table
+
+CONTROLADORES
+    sail artisan make:controller <NameControler> -r
+        -la r es para que sea un "resource controller"

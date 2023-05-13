@@ -12,17 +12,15 @@ class EstudianteRenglon extends Component
     public $estudiante;
     public $calificacion;
     public $username;
-
+    public $idEditando;
+    
     protected $rules = [
         'calificacion' => 'required',
     ];
     public function mount($estudiante)
     {
         $this->username =$estudiante->user->name;
-        // dd($clase);
-        // dd($this->username);
-    //    $this->estudiante = $estudiante;
-    //    dd($estudiante);
+
     }
 
     public function render()

@@ -21,6 +21,7 @@ class CalificacionInput extends Component
         $estudiante['calificacionFinal']=$datos['calificacion'];
         $estudiante->save();
         $this->emit('calificacionRegistrada');
+        $this->emit('editarCalificacion', null);
     }
     public function render()
     {

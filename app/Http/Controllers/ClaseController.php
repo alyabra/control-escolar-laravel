@@ -15,11 +15,17 @@ class ClaseController extends Controller
         return view('clases.index');
     }
 
+    public function tareas()
+    {
+        return view('clases.tareas');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
+        $this->authorize('create', Clase::class);
         return view('clases.create');
     }
 
@@ -30,7 +36,7 @@ class ClaseController extends Controller
     {
         //
     }
-
+    // clases.tareas
     /**
      * Display the specified resource.
      */

@@ -21,13 +21,13 @@
                         </div>
                         <div class="space-y-4">
                             <h2>Registro de ususarios</h2>
-                            <x-responsive-nav-link class="border border-gray-300 font-bold rounded-md p-4" :href="route('login')">
+                            <x-responsive-nav-link class="border border-gray-300 font-bold rounded-md p-4" :href="route('register')">
                                 {{ __('Registrar alumnos') }}
                             </x-responsive-nav-link>
-                            <x-responsive-nav-link class="border border-gray-300 font-bold rounded-md p-4" :href="route('login')">
+                            <x-responsive-nav-link class="border border-gray-300 font-bold rounded-md p-4" :href="route('register')">
                                 {{ __('Registrar profesores') }}
                             </x-responsive-nav-link>
-                            <x-responsive-nav-link class="border border-gray-300 w-1/6 font-bold rounded-md p-4 " :href="route('login')">
+                            <x-responsive-nav-link class="border border-gray-300 w-1/6 font-bold rounded-md p-4 " :href="route('register')">
                                 {{ __('Registrar administradores') }}
                             </x-responsive-nav-link>
                         </div>

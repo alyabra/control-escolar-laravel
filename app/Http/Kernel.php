@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\VerificalRol;
+use App\Http\Middleware\VerificaRolAdmi;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -65,5 +66,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'rol' => VerificalRol::class,
+        'rolAdmin' => VerificaRolAdmi::class,
     ];
 }

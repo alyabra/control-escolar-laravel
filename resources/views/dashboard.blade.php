@@ -40,21 +40,43 @@
         </div>
     @endcan
     {{-- Vista de profesor --}}
+    @can('editarCalificacion',  App\Models\Clase::class)
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900 flex flex-col text-center">
+                        <div class="space-y-4">
+                            <h2>Registra tareas o sube calificación</h2>
+                            <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 " :href="route('clases.index')">
+                                {{ __('Subir calificación') }}
+                            </x-responsive-nav-link>
+                            <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4" :href="route('clases.tareas')">
+                                    {{ __('Subir tareas') }}
+                            </x-responsive-nav-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    @endcan
+
+    {{-- Vista de alumnos --}}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 flex flex-col text-center">
                     <div class="space-y-4">
-                        <h2>Registra tareas o sube calificación</h2>
-                        <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 " :href="route('clases.index')">
-                            {{ __('Subir calificación') }}
+                        <h2>Ver calificaciones y tareas</h2>
+                        <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 " :href="route('cardex.index', auth()->user()->id)">
+                            {{ __('Ver tus calificaciones') }}
                         </x-responsive-nav-link>
-                        <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4" :href="route('clases.tareas')">
-                                {{ __('Subir tareas') }}
+                        <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4" :href="route('cardex.index', auth()->user()->id)">
+                                {{ __('Ver tareas') }}
                         </x-responsive-nav-link>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
+
 </x-app-layout>

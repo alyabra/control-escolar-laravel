@@ -21,7 +21,11 @@ class Estudiante extends Model
         return $this->belongsTo(User::class)->select(['name']);
 
     }
+    public function clase()
+    {
+        return $this->belongsTo(Clase::class)->select(['nombre']);
 
+    }
 
 }
 // 

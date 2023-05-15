@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EstudianteController extends Controller
@@ -9,9 +10,9 @@ class EstudianteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(User $user)
     {
-        //
+            return view('profile.cardex');
     }
 
     /**

@@ -14,6 +14,9 @@ class Clase extends Model
         'nombre',
         'user_id',
         'creditos',
+        'year',
+        'tipo_semestre',
+        'active',
     ];
 
     public function estudiantes()

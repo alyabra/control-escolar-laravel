@@ -10,10 +10,15 @@ class CrearClase extends Component
 {
     public $asignatura;
     public $docente;
+    public $year;
+    public $tipo_semestre;
+
 
     protected $rules = [
         'asignatura' => 'required|string',
-        'docente' => 'required|string'
+        'docente' => 'required|string',
+        'year'=> 'required',
+        'tipo_semestre' => 'required',
     ];
 
     public function crearClase() {
@@ -21,7 +26,10 @@ class CrearClase extends Component
         Clase::create([
             'nombre' => $datos['asignatura'],
             'user_id' => $datos['docente'],
+            'year' => intval($datos['year']),
+            'tipo_semestre'  => intval($datos['tipo_semestre']),
             'creditos' => 12,
+            'active' => 1,
         ]);
         // TODO: Crear mensaje flash de confirmacion
         return redirect()->route('clases.index');

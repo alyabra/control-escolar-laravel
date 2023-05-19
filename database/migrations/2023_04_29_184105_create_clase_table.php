@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->foreignId('user_id');
             $table->integer('creditos');
+            $table->integer('year');
+            $table->integer('active');
+            $table->integer('tipo_semestre');    
             $table->timestamps();
         });
     }

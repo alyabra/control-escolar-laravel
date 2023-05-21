@@ -13,9 +13,9 @@ class ClasesSeeder extends Seeder
      */
     public function run(): void
     {
-        // Clases 2023 ->impar
+        // Clases 2023 ->par
         DB::table('clases')->insert([
-            'nombre' => 'Matematicas II',
+            'nombre' => 'Calculo IV',
             'user_id' => 17,
             'year' => 2023,
             'active' => 1,
@@ -23,108 +23,258 @@ class ClasesSeeder extends Seeder
             'tipo_semestre' => 2,
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'Fisica II',
+            'nombre' => 'Cuantica IV',
+            'user_id' => 17,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Relatividad IV',
+            'user_id' => 19,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Optoelectronica IV',
+            'user_id' => 18,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Mecanica estadistica IV',
+            'user_id' => 18,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        // 2023 impar
+        // 2023 impar
+        // 2023 impar
+
+        DB::table('clases')->insert([
+            'nombre' => 'Calculo III',
             'user_id' => 17,
             'year' => 2023,
             'active' => 1,
             'creditos' => 12,
             'tipo_semestre' => 1,
         ]);
-        // DB::table('clases')->insert([
-        //     'nombre' => 'Algebra lineal I',
-        //     'user_id' => 18,
-        //     'year' => 2023,
-        //     'active' => 1,
-        //     'creditos' => 12,
-        //     'tipo_semestre' => 1,
-        // ]);
-        // DB::table('clases')->insert([
-        //     'nombre' => 'Algebra II',
-        //     'user_id' => 18,
-        //     'year' => 2023,
-        //     'active' => 1,
-        //     'creditos' => 12,
-        //     'tipo_semestre' => 1,
-        // ]);
-        // DB::table('clases')->insert([
-        //     'nombre' => 'Topología I',
-        //     'user_id' => 18,
-        //     'year' => 2023,
-        //     'active' => 1,
-        //     'creditos' => 12,
-        //     'tipo_semestre' => 2,
-        // ]);
-        // DB::table('clases')->insert([
-        //     'nombre' => 'Topología II',
-        //     'user_id' => 18,
-        //     'year' => 2023,
-        //     'active' => 1,
-        //     'creditos' => 12,
-        //     'tipo_semestre' => 2,
-        // ]);
         DB::table('clases')->insert([
-            'nombre' => 'Matematicas I',
+            'nombre' => 'Cuantica III',
+            'user_id' => 17,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Relatividad III',
+            'user_id' => 19,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Optoelectronica III',
+            'user_id' => 18,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Mecanica estadistica III',
+            'user_id' => 18,
+            'year' => 2023,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+
+        // 2022
+        DB::table('clases')->insert([
+            'nombre' => 'Calculo II',
             'user_id' => 17,
             'year' => 2022,
-            'active' => 0,
+            'active' => 1,
             'creditos' => 12,
             'tipo_semestre' => 2,
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'Fisica I',
+            'nombre' => 'Cuantica II',
             'user_id' => 17,
             'year' => 2022,
-            'active' => 0,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Relatividad II',
+            'user_id' => 19,
+            'year' => 2022,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Optoelectronica II',
+            'user_id' => 18,
+            'year' => 2022,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Mecanica estadistica II',
+            'user_id' => 18,
+            'year' => 2022,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        // 2022 impar
+        // 2022 impar
+        // 2022 impar
+
+        DB::table('clases')->insert([
+            'nombre' => 'Calculo I',
+            'user_id' => 17,
+            'year' => 2022,
+            'active' => 1,
             'creditos' => 12,
             'tipo_semestre' => 1,
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'Calculo 2',
+            'nombre' => 'Cuantica I',
+            'user_id' => 17,
+            'year' => 2022,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Relatividad I',
+            'user_id' => 19,
+            'year' => 2022,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Optoelectronica I',
+            'user_id' => 18,
+            'year' => 2022,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Mecanica estadistica I',
+            'user_id' => 18,
+            'year' => 2022,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        // Clases 2021
+        // Clases 2021
+
+         // Clases 2021 ->par
+         DB::table('clases')->insert([
+            'nombre' => 'Algebra II',
+            'user_id' => 17,
+            'year' => 2021,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Geometria IV',
+            'user_id' => 17,
+            'year' => 2021,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Termodinamica IV',
+            'user_id' => 19,
+            'year' => 2021,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 2,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Optica IV',
             'user_id' => 18,
             'year' => 2021,
-            'active' => 0,
+            'active' => 1,
             'creditos' => 12,
             'tipo_semestre' => 2,
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'Calculo',
+            'nombre' => 'Mecanica estadistica IV',
             'user_id' => 18,
             'year' => 2021,
-            'active' => 0,
-            'creditos' => 12,
-            'tipo_semestre' => 1,
-        ]);
-        DB::table('clases')->insert([
-            'nombre' => 'Aritmetica 2',
-            'user_id' => 17,
-            'year' => 2020,
-            'active' => 0,
+            'active' => 1,
             'creditos' => 12,
             'tipo_semestre' => 2,
         ]);
+        // 2021 impar
+        // 2021 impar
+        // 2021 impar
+
         DB::table('clases')->insert([
-            'nombre' => 'Aritmetica',
+            'nombre' => 'Algebra I',
             'user_id' => 17,
-            'year' => 2020,
-            'active' => 0,
+            'year' => 2021,
+            'active' => 1,
             'creditos' => 12,
             'tipo_semestre' => 1,
         ]);
         DB::table('clases')->insert([
-            'nombre' => 'Geometria 2',
-            'user_id' => 18,
-            'year' => 2019,
-            'active' => 0,
-            'creditos' => 12,
-            'tipo_semestre' => 2,
-        ]);
-        DB::table('clases')->insert([
-            'nombre' => 'Geometria',
-            'user_id' => 18,
-            'year' => 2019,
-            'active' => 0,
+            'nombre' => 'Geometria III',
+            'user_id' => 17,
+            'year' => 2021,
+            'active' => 1,
             'creditos' => 12,
             'tipo_semestre' => 1,
         ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Termodinamica III',
+            'user_id' => 19,
+            'year' => 2021,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Optica III',
+            'user_id' => 18,
+            'year' => 2021,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+        DB::table('clases')->insert([
+            'nombre' => 'Mecanica estadistica III',
+            'user_id' => 18,
+            'year' => 2021,
+            'active' => 1,
+            'creditos' => 12,
+            'tipo_semestre' => 1,
+        ]);
+
+    
+    
+
     }
 }

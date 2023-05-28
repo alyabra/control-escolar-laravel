@@ -14,22 +14,9 @@
     </div>
 
     <div class="bg-white mx-auto p-4 md:w-3/4 my-4 shadow-xl rounded flex flex-col gap-2">
-        <h2 class="text-center bg-slate-400">Avisos</h2>
-        <div class="border border-slate-500 p-2">
-            <h3 class="bg-slate-200 uppercase font-bold">Titulo del aviso 1 </h3>
-            <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus aperiam labore earum, quibusdam odio asperiores rem nihil vitae totam doloribus. Praesentium nisi eum autem ipsam, repudiandae consectetur error ipsum corporis.</div>
-            <p class="bg-slate-200">Fecha de publicación <span class="font-bold">12/06/2023</span></p>
-        </div> 
-        <div class="border border-slate-500">
-            <h3>Titulo del aviso 2 </h3>
-            <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus aperiam labore earum, quibusdam odio asperiores rem nihil vitae totam doloribus. Praesentium nisi eum autem ipsam, repudiandae consectetur error ipsum corporis.</div>
-            <p>Fecha de publicación <span class="font-bold">12/06/2023</span></p>
-        </div>
-        <div class="border border-slate-500">
-            <h3>Titulo del aviso 3</h3>
-            <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus aperiam labore earum, quibusdam odio asperiores rem nihil vitae totam doloribus. Praesentium nisi eum autem ipsam, repudiandae consectetur error ipsum corporis.</div>
-            <p>Fecha de publicación <span class="font-bold">12/06/2023</span></p>
-        </div>      
+        <h2 class="text-center bg-slate-400">Avisos</h2>  
+        <x-lista-avisos></x-lista-avisos>
+  
     </div>
 
     <div class="bg-white mx-auto p-4 md:w-3/4 my-4 shadow-xl rounded flex flex-col gap-2">
@@ -42,5 +29,4 @@
             </ul>
         </div>
     </div>
-
 </x-app-layout>

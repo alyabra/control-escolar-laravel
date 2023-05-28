@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ClaseController;
-use App\Http\Controllers\EstudianteController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AvisoController;
+use App\Http\Controllers\ClaseController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EstudianteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +42,9 @@ Route::middleware('auth')->group(function () {
 
 // Vista de alumno
 Route::get('profile/{user}', [EstudianteController::class, 'index'])->name('cardex.index');
+
+// Crear avisos
+Route::get('/avisos/create', [AvisoController::class, 'create'])->name('avisos.create');
+Route::post('/avisos/create', [AvisoController::class, 'store'])->name('avisos.store');
 
 require __DIR__.'/auth.php';

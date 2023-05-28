@@ -3,7 +3,19 @@ MIGRACIONES
     >sail artisan make:migration add_<nombreColumna>_to_<nombreTabla>_table
     Ejemplo->agregar la columna rol a la tabla de usuarios
     >sail artisan make:migration add_rol_to_users_table
+    CREAR TABLA NUEVA
+    > sail artisan make:migration create_nombre_tabla_table --create=nombre_tabla
 
 CONTROLADORES
     sail artisan make:controller <NameControler> -r
         -la r es para que sea un "resource controller"
+MODELOS
+    Crear modelos
+        sail artisan make:model NombreDelModelo
+
+POLICIEs
+
+CREAR COMPONENTE 
+php artisan make:component NombreComponente
+
+Crear seeder

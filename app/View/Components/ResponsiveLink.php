@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Boleta extends Component
+class ResponsiveLink extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class Boleta extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.boleta');
+        return view('components.responsive-link');
     }
 }

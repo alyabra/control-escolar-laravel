@@ -25,8 +25,6 @@ class EstudianteRenglon extends Component
 
     public function render()
     {
-        // $name=$this->estudiante->user->name;
-        // dd($this->estudiante->user);
         return view('livewire.estudiante-renglon', [
         ]);
     }

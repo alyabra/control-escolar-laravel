@@ -9,7 +9,6 @@ class ListaClases extends Component
 {
     public function render()
     {
-        // $clases = Clase::all();
         if (auth()->user()->rol ===1 ) {
            $clases = Clase::all();
         } else {

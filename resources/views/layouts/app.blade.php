@@ -22,7 +22,7 @@
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div> 
                 </header>
@@ -33,6 +33,11 @@
                 {{ $slot }}
             </main>
         </div>
+        <footer class="bg-white w-full h-10 flex flex-col text-center text-sm border-t border-slate-200">
+            <p>Universidad de la vida</p>
+            <p>Alyabra Alejandro Vargas Chávez</p>
+            <p>alyabra.vargas@gmail.com</p>
+        </footer>
         @livewireScripts
         @stack('scripts')
     </body>

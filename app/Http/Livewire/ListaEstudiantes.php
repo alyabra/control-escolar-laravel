@@ -31,7 +31,6 @@ class ListaEstudiantes extends Component
 
     public function render()
     {
-        // $this->estudiantes = Estudiante::where('clase_id', $this->clase->id)->get();
         $estudiantes = Estudiante::where('clase_id', $this->clase->id)->get();
         return view('livewire.lista-estudiantes', [
             // 'estudiantes' => $this->estudiantes ,

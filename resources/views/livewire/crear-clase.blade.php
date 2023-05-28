@@ -1,4 +1,5 @@
-<form class="md:w-1/2 space-y-5" wire:submit.prevent='crearClase' >
+<form class="m-2 p-4 bg-white max-w-2xl mx-auto rounded shadow text-center flex flex-col gap-2" wire:submit.prevent='crearClase' >
+    <h1 class="text-2xl font-bold text-center">Crear nueva clase</h1>
     <div>
         <x-input-label for="asignatura" :value="__('Nombre de la asignatura')" />
         <x-text-input
@@ -30,24 +31,19 @@
         @enderror
     </div> 
     <div>
-        <x-input-label for="year" :value="__('year')" />
+        <x-input-label for="year" :value="__('Año')" />
         <x-text-input
         id="year" 
-        class="block mt-1 w-full" 
+        class="block mt-1 w-1/2 mx-auto" 
         type="number" 
         wire:model="year" 
         :value="old('year')"
-        {{-- placeholder="20" --}}
+        placeholder=2023
         />
         @error('year')
         <livewire:mostrar-alerta :message="$message"/>
        @enderror
-         {{-- <input type="number" id="year" wire:mode="year" min="2015" max="2100">
-        @error('year')
-         <livewire:mostrar-alerta :message="$message"/>
-        @enderror --}}
     </div> 
-
     <div>
         <x-input-label for="tipo_semestre" :value="__('Semestre par o impar')" />
         <select 
@@ -64,7 +60,7 @@
         @enderror
     </div> 
 
-    <x-primary-button class="w-full justify-center">
+    <x-primary-button class="w-full justify-center my-2">
         {{ __('Crear clase') }}
     </x-primary-button>
 

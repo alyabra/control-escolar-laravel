@@ -183,6 +183,10 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        // 'BloqueAction' => App\View\Components\BloqueAction::class
+
     ])->toArray(),
+
+    // 'BloqueAction' => \App\View\Components\BloqueAction::class
 
 ];

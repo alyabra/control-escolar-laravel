@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Boleta extends Component
+class BloqueAccion extends Component
 {
     /**
      * Create a new component instance.
@@ -19,8 +19,8 @@ class Boleta extends Component
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+    public function render(): View
     {
-        return view('components.boleta');
+        return view('components.bloque-accion');
     }
 }

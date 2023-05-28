@@ -23,7 +23,7 @@ class CrearClase extends Component
 
     public function crearClase() {
         $datos = $this->validate();
-        Clase::create([
+        $clase = Clase::create([
             'nombre' => $datos['asignatura'],
             'user_id' => $datos['docente'],
             'year' => intval($datos['year']),
@@ -31,8 +31,7 @@ class CrearClase extends Component
             'creditos' => 12,
             'active' => 1,
         ]);
-        // TODO: Crear mensaje flash de confirmacion
-        return redirect()->route('clases.index');
+        return redirect()->route('clases.show', $clase->id);
     }
     public function render()
     {

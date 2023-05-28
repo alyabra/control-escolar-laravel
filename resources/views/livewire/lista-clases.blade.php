@@ -1,13 +1,13 @@
-<div>
-    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+<div class="border border-gray-400 rounded shadow-md flex flex-col md:justify-center p-2 bg-white w-2/3 mx-auto my-2">
+    <h1 class="text-2xl font-bold text-center">Lista de clases activas</h1>
+    <div class="w-full flex justify-between py-2 px-4 font-bold">
+            <p>Clase</p>
+            <p>Docente asignado</p>
+    </div>
     @foreach ( $clases as $clase)
-            <a href="{{ route('clases.show', $clase->id)}}">
-                <div class="w-full rounded-sm bg-slate-100 hover:bg-slate-300 flex justify-between font-bold border bordor-slate-900 my-1 p-2">
-                    <div class="w-2/3 flex gap-3 justify-between">
-                        <p>{{$clase->nombre}}</p>
-                        <p>{{$clase->user->name}}</p>
-                    </div> 
-                </div>
-            </a>
+        <x-responsive-link :href="route('clases.show', $clase->id)">
+            <p>{{$clase->nombre}}</p>
+            <p>{{$clase->user->name}}</p>
+        </x-responsive-link>
     @endforeach
 </div>

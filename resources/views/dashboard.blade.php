@@ -1,82 +1,63 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Panel') }}
         </h2>
     </x-slot>
+
     @can('create', App\Models\Clase::class)
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900 flex flex-col text-center">
-                        <div class="space-y-4">
-                            <h2>Edición de clases</h2>
-                                <p>Tu no puedes agrefar clases</p>
-                            <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 " :href="route('clases.create')">
-                                {{ __('Agregar clases') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4" :href="route('clases.index')">
-                                    {{ __('Editar clases') }}
-                            </x-responsive-nav-link>
-                        </div>
-                        <div class="space-y-4">
-                            <h2>Registro de ususarios</h2>
-                            <x-responsive-nav-link class="border border-gray-300 font-bold rounded-md p-4" :href="route('register')">
-                                {{ __('Registrar alumnos') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link class="border border-gray-300 font-bold rounded-md p-4" :href="route('register')">
-                                {{ __('Registrar profesores') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link class="border border-gray-300 w-1/6 font-bold rounded-md p-4 " :href="route('register')">
-                                {{ __('Registrar administradores') }}
-                            </x-responsive-nav-link>
-                        </div>
-                        <div>
-                            <h2>Pagos</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-bloque-accion >
+            <x-slot name="title">
+                {{ __('Edición de clases') }}
+            </x-slot>
+             <x-responsive-link :href="route('clases.index')">
+                {{ __('Editar clases') }}
+             </x-responsive-link>
+             <x-responsive-link :href="route('clases.create')">
+                {{ __('Crear clases') }}
+             </x-responsive-link>
+        </x-bloque-accion>
+        
+        <x-bloque-accion >
+            <x-slot name="title">
+                {{ __('Registro de ususarios') }}
+            </x-slot>
+             <x-responsive-link :href="route('register')">
+                {{ __('Registrar administradores') }}
+             </x-responsive-link>
+        </x-bloque-accion>
+
     @endcan
     {{-- Vista de profesor --}}
     @can('editarCalificacion',  App\Models\Clase::class)
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900 flex flex-col text-center">
-                        <div class="space-y-4">
-                            <h2>Registra tareas o sube calificación</h2>
-                            <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 " :href="route('clases.index')">
-                                {{ __('Subir calificación') }}
-                            </x-responsive-nav-link>
-                            <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4" :href="route('clases.tareas')">
-                                    {{ __('Subir tareas') }}
-                            </x-responsive-nav-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>        
+        <x-bloque-accion >
+            <x-slot name="title">
+                {{ __('Registra tareas o sube calificación') }}
+            </x-slot>
+            <x-responsive-link :href="route('clases.index')">
+                {{ __('Subir calificación') }}
+             </x-responsive-link>
+             <x-responsive-link :href="route('clases.tareas')">
+                {{ __('Subir tareas') }}
+             </x-responsive-link>
+        </x-bloque-accion> 
     @endcan
 
     {{-- Vista de alumnos --}}
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 flex flex-col text-center">
-                    <div class="space-y-4">
-                        <h2>Ver calificaciones y tareas</h2>
-                        <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4 " :href="route('cardex.index', auth()->user()->id)">
-                            {{ __('Ver tus calificaciones') }}
-                        </x-responsive-nav-link>
-                        <x-responsive-nav-link class="border border-gray-300  font-bold  rounded-md p-4" :href="route('cardex.index', auth()->user()->id)">
-                                {{ __('Ver tareas') }}
-                        </x-responsive-nav-link>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  
+
+    @cannot('editarCalificacion', App\Models\Clase::class)
+        <x-bloque-accion >
+            <x-slot name="title">
+                {{ __('Ver calificaciones y tareas') }}
+            </x-slot>
+            <x-responsive-link :href="route('cardex.index', auth()->user()->id)">
+                {{ __('Ver tus calificaciones') }}
+            </x-responsive-link>
+            <x-responsive-link  :href="route('cardex.index', auth()->user()->id)">
+                {{ __('Ver tareas') }}
+            </x-responsive-link>
+        </x-bloque-accion> 
+    @endcannot
+
 
 </x-app-layout>

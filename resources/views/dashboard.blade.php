@@ -8,13 +8,28 @@
     @can('create', App\Models\Clase::class)
         <x-bloque-accion >
             <x-slot name="title">
-                {{ __('Edición de clases') }}
+                {{ __('Edición de clases y semestres') }}
             </x-slot>
              <x-responsive-link :href="route('clases.index')">
                 {{ __('Editar clases') }}
              </x-responsive-link>
              <x-responsive-link :href="route('clases.create')">
                 {{ __('Crear clases') }}
+             </x-responsive-link>
+             <x-responsive-link :href="route('semestre.create')">
+                {{ __('Registrar nuevo semestre') }}
+             </x-responsive-link>
+            <x-responsive-link :href="route('semestre.index')">
+               {{ __('Editar semestre') }}
+            </x-responsive-link>
+        </x-bloque-accion>
+
+        <x-bloque-accion >
+            <x-slot name="title">
+                {{ __('Editar avisos') }}
+            </x-slot>
+            <x-responsive-link :href="route('avisos.create')">
+                {{ __('Crear un aviso nuevo') }}
              </x-responsive-link>
         </x-bloque-accion>
         
@@ -34,7 +49,7 @@
             <x-slot name="title">
                 {{ __('Registra tareas o sube calificación') }}
             </x-slot>
-            <x-responsive-link :href="route('clases.index')">
+            <x-responsive-link :href="route('semestre.index')">
                 {{ __('Subir calificación') }}
              </x-responsive-link>
              <x-responsive-link :href="route('clases.tareas')">

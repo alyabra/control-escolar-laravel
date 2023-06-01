@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('avisos', function (Blueprint $table) {
+        Schema::create('semestres', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('contenido');
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('avisos');
+        Schema::dropIfExists('semestres');
     }
 };

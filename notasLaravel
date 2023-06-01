@@ -18,4 +18,7 @@ POLICIEs
 CREAR COMPONENTE 
 php artisan make:component NombreComponente
 
-Crear seeder
+SEEDERS
+>sail artisan make:seeder <NombreSeeder>
+Ejecutar seeder
+>sail artisan db:seed --class=RegistrosSeeder

@@ -29,37 +29,7 @@
         @error('docente')
          <livewire:mostrar-alerta :message="$message"/>
         @enderror
-    </div> 
-    <div>
-        <x-input-label for="year" :value="__('Año')" />
-        <x-text-input
-        id="year" 
-        class="block mt-1 w-1/2 mx-auto" 
-        type="number" 
-        wire:model="year" 
-        :value="old('year')"
-        placeholder=2023
-        />
-        @error('year')
-        <livewire:mostrar-alerta :message="$message"/>
-       @enderror
-    </div> 
-    <div>
-        <x-input-label for="tipo_semestre" :value="__('Semestre par o impar')" />
-        <select 
-            wire:model="tipo_semestre" 
-            id="tipo_semestre"
-            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm px-4"
-        >
-            <option value="">-- Tipo de semestre --</option>
-                <option value="impar">1</option>
-                <option value="par">2</option>
-        </select>
-        @error('tipo_semestre')
-         <livewire:mostrar-alerta :message="$message"/>
-        @enderror
-    </div> 
-
+    </div>     
     <x-primary-button class="w-full justify-center my-2">
         {{ __('Crear clase') }}
     </x-primary-button>

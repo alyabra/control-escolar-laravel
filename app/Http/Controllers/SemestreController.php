@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Clase;
+use App\Models\Semestre;
 use Illuminate\Http\Request;
 
-class ClaseController extends Controller
+class SemestreController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('clases.index');
-    }
-
-    public function tareas()
-    {
-        return view('clases.tareas');
+        return view('semestres.index');
     }
 
     /**
@@ -25,8 +20,7 @@ class ClaseController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', Clase::class);
-        return view('clases.create');
+        return view('semestres.create');
     }
 
     /**
@@ -34,17 +28,26 @@ class ClaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'fecha_inicio' => 'required',
+            'fecha_fin' => 'required',
+        ]);
+
+        Semestre::create([
+            'fecha_inicio' => $request->fecha_inicio,
+            'fecha_fin' => $request->fecha_inicio,
+        ]);
+        return redirect('/');
     }
-    // clases.tareas
+
     /**
      * Display the specified resource.
      */
-    public function show(Clase $clase)
+    public function show(Semestre $semestre)
     {
-        //
-        return view('clases.show', [
-            'clase' => $clase
+        // dd($semestre->clases);
+        return view('semestres.show', [
+            'semestre' => $semestre
         ]);
     }
 
@@ -53,8 +56,7 @@ class ClaseController extends Controller
      */
     public function edit(string $id)
     {
-        $this->authorize('create', Clase::class);
-        return view('clases.create');
+        //
     }
 
     /**

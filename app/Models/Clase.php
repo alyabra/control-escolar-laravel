@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Semestre;
 use App\Models\Estudiante;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,20 +15,22 @@ class Clase extends Model
         'nombre',
         'user_id',
         'creditos',
-        'year',
-        'tipo_semestre',
         'active',
+        'semestre_id'
     ];
 
     public function estudiantes()
     {
-        // dd('antes del error');
         return $this->hasMany(Estudiante::class);
     }
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function semestre()
+    {
+        return $this->belongsTo(Semestre::class);
     }
 
     public function getNombre() 

@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('avisos', function (Blueprint $table) {
-            $table->id();
-            $table->string('titulo');
-            $table->string('contenido');
-            $table->timestamps();
+        Schema::table('clases', function (Blueprint $table) {
+            $table->foreignId('semestre_id');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('avisos');
+        Schema::table('clases', function (Blueprint $table) {
+            $table->dropColumn('semestre_id');
+        });
     }
 };

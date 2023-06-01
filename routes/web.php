@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AvisoController;
 use App\Http\Controllers\ClaseController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SemestreController;
 use App\Http\Controllers\EstudianteController;
 
 /*
@@ -46,5 +47,12 @@ Route::get('profile/{user}', [EstudianteController::class, 'index'])->name('card
 // Crear avisos
 Route::get('/avisos/create', [AvisoController::class, 'create'])->name('avisos.create');
 Route::post('/avisos/create', [AvisoController::class, 'store'])->name('avisos.store');
+
+// Crear semestre
+Route::get('/semestres', [SemestreController::class, 'index'])->name('semestre.index');
+Route::get('/semestres/create', [SemestreController::class, 'create'])->name('semestre.create');
+Route::post('/semestres/create', [SemestreController::class, 'store'])->name('semestre.store');
+Route::get('/semestres/{semestre}', [SemestreController::class, 'show'])->name('semestre.show');
+
 
 require __DIR__.'/auth.php';

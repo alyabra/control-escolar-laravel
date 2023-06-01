@@ -23,7 +23,7 @@ class Estudiante extends Model
     }
     public function clase()
     {
-        return $this->belongsTo(Clase::class)->select(['nombre', 'year', 'tipo_semestre']);
+        return $this->belongsTo(Clase::class);
 
     }
 

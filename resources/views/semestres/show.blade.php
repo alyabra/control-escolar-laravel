@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="w-full flex justify-between">
-                <h2>Materia: <span class="font-bold">{{$clase->nombre}}</span></h2>
-                <p>Profesor asignado: <span class="font-bold">{{$clase->user->name}}</span></p>
-            @can('create', App\Models\Clase::class)
+                {{-- <h2>Materia: <span class="font-bold">{{$clase->nombre}}</span></h2> --}}
+                {{-- <p>Profesor asignado: <span class="font-bold">{{$clase->user->name}}</span></p> --}}
+            {{-- @can('create', App\Models\Clase::class)
             <x-secondary-button class="bg-blue-400 font-bold text-black"
                 :href="route('clases.create')"
             >
@@ -14,13 +14,13 @@
             </x-secondary-button>
 
                 
-            @endcan
+            @endcan --}}
+            <h2>{{$semestre->fecha_inicio}}</h2>
         </div>
     </x-slot>
 
-    <livewire:lista-estudiantes :clase="$clase">
+    <div>
+        <livewire:lista-clases :semestre="$semestre">
+    </div>
 
-    @can('create', App\Models\Clase::class)
-        <livewire:lista-alumnos :clase="$clase"/>
-    @endcan
 </x-app-layout>

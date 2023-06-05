@@ -12,7 +12,7 @@ class AvisoController extends Controller
      */
     public function index()
     {
-        // return view('profile.cardex');
+        return view('avisos.index');
     }
 
     /**
@@ -23,9 +23,6 @@ class AvisoController extends Controller
         return view('avisos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -37,7 +34,7 @@ class AvisoController extends Controller
             'titulo' => $request->titulo,
             'contenido' => $request->contenido,
         ]);
-        return redirect('/');
+        return redirect('/avisos');
     }
     
 
@@ -70,6 +67,6 @@ class AvisoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // $aviso->delete();
     }
 }

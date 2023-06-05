@@ -16,6 +16,7 @@ class Clase extends Model
         'user_id',
         'creditos',
         'active',
+        'materia_id',
         'semestre_id'
     ];
 

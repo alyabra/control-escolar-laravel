@@ -9,10 +9,12 @@ use Illuminate\View\Component;
 
 class ListaAvisos extends Component
 {
+
     public $avisos; 
     /**
      * Create a new component instance.
      */
+
     public function __construct()
     {
         //

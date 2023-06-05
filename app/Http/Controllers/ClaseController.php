@@ -51,10 +51,12 @@ class ClaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Clase $clase)
     {
         $this->authorize('create', Clase::class);
-        return view('clases.create');
+        return view('clases.edit', [
+            'clase' => $clase
+        ]);
     }
 
     /**

@@ -11,7 +11,7 @@ class Semestre extends Model
     use HasFactory;
     protected $fillable = [
         'fecha_inicio',
-        'fecha_final'
+        'fecha_fin'
     ];
 
     public function clases()

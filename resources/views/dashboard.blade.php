@@ -10,12 +10,9 @@
             <x-slot name="title">
                 {{ __('Edición de clases y semestres') }}
             </x-slot>
-             <x-responsive-link :href="route('clases.index')">
+             {{-- <x-responsive-link :href="route('clases.index')">
                 {{ __('Editar clases') }}
-             </x-responsive-link>
-             <x-responsive-link :href="route('clases.create')">
-                {{ __('Crear clases') }}
-             </x-responsive-link>
+             </x-responsive-link> --}}
              <x-responsive-link :href="route('semestre.create')">
                 {{ __('Registrar nuevo semestre') }}
              </x-responsive-link>
@@ -30,6 +27,9 @@
             </x-slot>
             <x-responsive-link :href="route('avisos.create')">
                 {{ __('Crear un aviso nuevo') }}
+             </x-responsive-link>
+             <x-responsive-link :href="route('avisos.index')">
+                {{ __('Editar avisos') }}
              </x-responsive-link>
         </x-bloque-accion>
         

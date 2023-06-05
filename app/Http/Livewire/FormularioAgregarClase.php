@@ -7,7 +7,7 @@ use App\Models\Clase;
 use Livewire\Component;
 use App\Models\Semestre;
 
-class CrearClase extends Component
+class FormularioAgregarClase extends Component
 {
     public $asignatura;
     public $docente;
@@ -25,11 +25,11 @@ class CrearClase extends Component
         $clase = Clase::create([
             'nombre' => $datos['asignatura'],
             'user_id' => $datos['docente'],
-            // 'semestre_id' => $datos['idSemestre'],
+            'materia_id' => 1,
             'semestre_id' => $this->semestreid,
             'creditos' => 12,
         ]);
-        return redirect()->route('clases.show', $clase->id);
+        return redirect()->route('semestre.show', $this->semestreid);
     }
     public function render()
     {

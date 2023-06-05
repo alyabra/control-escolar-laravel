@@ -32,10 +32,9 @@ class SemestreController extends Controller
             'fecha_inicio' => 'required',
             'fecha_fin' => 'required',
         ]);
-
         Semestre::create([
             'fecha_inicio' => $request->fecha_inicio,
-            'fecha_fin' => $request->fecha_inicio,
+            'fecha_fin' => $request->fecha_fin,
         ]);
         return redirect('/');
     }
@@ -54,9 +53,11 @@ class SemestreController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Semestre $semestre)
     {
-        //
+        return view('semestres.edit', [
+            'semestre' => $semestre
+        ]);
     }
 
     /**

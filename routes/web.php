@@ -32,6 +32,7 @@ Route::get('/clases', [ClaseController::class, 'index'])->middleware(['auth','ro
 Route::get('/clases/tareas', [ClaseController::class, 'tareas'])->name('clases.tareas');
 Route::get('/clases/create', [ClaseController::class, 'create'])->middleware(['auth'])->name('clases.create');
 Route::get('/clases/{clase}', [ClaseController::class, 'show'])->middleware(['auth','rol'])->name('clases.show');
+Route::get('/clases/edit/{clase}', [ClaseController::class, 'edit'])->middleware(['auth','rol'])->name('clases.edit');
 
 Route::get('/clases/tareas', [ClaseController::class, 'tareas'])->name('clases.tareas');
 
@@ -47,12 +48,14 @@ Route::get('profile/{user}', [EstudianteController::class, 'index'])->name('card
 // Crear avisos
 Route::get('/avisos/create', [AvisoController::class, 'create'])->name('avisos.create');
 Route::post('/avisos/create', [AvisoController::class, 'store'])->name('avisos.store');
+Route::get('/avisos', [AvisoController::class, 'index'])->name('avisos.index');
 
 // Crear semestre
 Route::get('/semestres', [SemestreController::class, 'index'])->name('semestre.index');
 Route::get('/semestres/create', [SemestreController::class, 'create'])->name('semestre.create');
 Route::post('/semestres/create', [SemestreController::class, 'store'])->name('semestre.store');
 Route::get('/semestres/{semestre}', [SemestreController::class, 'show'])->name('semestre.show');
+Route::get('/semestres/edit/{semestre}', [SemestreController::class, 'edit'])->name('semestre.edit');
 
 
 require __DIR__.'/auth.php';

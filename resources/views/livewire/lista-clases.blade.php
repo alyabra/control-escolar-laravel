@@ -4,10 +4,14 @@
             <p>Clase</p>
             <p>Docente asignado</p>
     </div>
-    @foreach ( $clases as $clase)
-        <x-responsive-link :href="route('clases.show', $clase->id)">
-            <p>{{$clase->nombre}}</p>
-            <p>{{$clase->user->name}}</p>
-        </x-responsive-link>
-    @endforeach
+    @if ($clases->count()>0)
+        @foreach ( $clases as $clase)
+            <x-responsive-link :href="route('clases.show', $clase->id)">
+                <p>{{$clase->nombre}}</p>
+                <p>{{$clase->user->name}}</p>
+            </x-responsive-link>
+        @endforeach
+    @else 
+            <p class="text-center">Aun no hay clases registradas</p>
+    @endif
 </div>

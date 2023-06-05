@@ -1,5 +1,5 @@
 {{-- Para usar este componente se necesita el id del dato y ademas el nombre del evento que se va emitir el cual recibe el id --}}
-<button class=" place-content-center h-full"
+<button class=" place-content-center"
 wire:click="$emit('alertar', {{$ideliminar}}, '{{$dato}}')"
 >
 <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-full">
@@ -11,11 +11,10 @@ wire:click="$emit('alertar', {{$ideliminar}}, '{{$dato}}')"
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-   Livewire.on('alertar', (id, eliminarDato) => {
-      // alert(id)
+   Livewire.on('alertar', (id, dato) => {
        Swal.fire({
        title: 'Eliminar',
-       text: `Una ${eliminarDato} eliminada no se puede recuperar`,
+       text: `Una ${dato} eliminada no se puede recuperar`,
        icon: 'warning',
        showCancelButton: true,
        confirmButtonColor: '#3085d6',
@@ -24,12 +23,13 @@ wire:click="$emit('alertar', {{$ideliminar}}, '{{$dato}}')"
        cancelButtonText: 'Cancelar'
        }).then((result) => {
        if (result.isConfirmed) {
-           Livewire.emit(eliminarDato, id)
+           Livewire.emit(dato, id)
            Swal.fire(
-           `Se elimino la ${eliminarDato}`,
+           `Se elimino la ${dato}`,
            'Eliminado correctamente',
            'success'
            )
+        //    location.reload();
        }
    })
    })

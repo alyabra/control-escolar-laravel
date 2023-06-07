@@ -6,12 +6,6 @@
     </x-slot>
 
 
-        <div class="bg-white mx-auto p-4 md:w-3/4 my-4 shadow-xl rounded">
-            <p>Identificate para tener acceso al sitema</p>
-            <p>Si eres administrativo podras registrar nuevas clases y administrarlas</p>
-            <p>Si eres un pofresor podras registrar calificaciones de tus alumnos y agregar tareas</p>
-            <p>Si eres estudiante podras revisar tu calificación y consultar tareas</p>
-        </div>
     <div class="flex md:flex-row flex-col w-5/6 mx-auto gap-2">
         <livewire:lista-avisos>
         <div class="bg-white mx-auto w-full md:w-1/3 p-4 my-4 shadow-xl rounded flex flex-col gap-2">

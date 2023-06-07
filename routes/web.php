@@ -42,18 +42,21 @@ Route::middleware('auth')->group(function () {
 });
 
 // Vista de alumno
-Route::get('profile/{user}', [EstudianteController::class, 'index'])->name('cardex.index');
+Route::get('profile/{user}', [EstudianteController::class, 'index'])->middleware(['auth'])->name('cardex.index');
 
 // Crear avisos
+// TODOS: los metodos post requieren un middeware?
 Route::post('/avisos/create', [AvisoController::class, 'store'])->name('avisos.store');
-Route::get('/avisos', [AvisoController::class, 'index'])->name('avisos.index');
+Route::get('/avisos', [AvisoController::class, 'index'])->middleware(['auth','rol'])->name('avisos.index');
 
-// Crear semestre
-Route::get('/semestres', [SemestreController::class, 'index'])->name('semestre.index');
-Route::get('/semestres/create', [SemestreController::class, 'create'])->name('semestre.create');
-Route::post('/semestres/create', [SemestreController::class, 'store'])->name('semestre.store');
-Route::get('/semestres/{semestre}', [SemestreController::class, 'show'])->name('semestre.show');
-Route::get('/semestres/edit/{semestre}', [SemestreController::class, 'edit'])->name('semestre.edit');
+// Rutas de semestres
+Route::middleware('auth')->group(function () {
+    Route::get('/semestres', [SemestreController::class, 'index'])->middleware(['auth'])->name('semestre.index');
+    Route::get('/semestres/create', [SemestreController::class, 'create'])->middleware(['rol'])->name('semestre.create');
+    Route::post('/semestres/create', [SemestreController::class, 'store'])->middleware(['rol'])->name('semestre.store');
+    Route::get('/semestres/{semestre}', [SemestreController::class, 'show'])->name('semestre.show');
+    Route::get('/semestres/edit/{semestre}', [SemestreController::class, 'edit'])->middleware(['rol'])->name('semestre.edit');
+});
 
 
 require __DIR__.'/auth.php';

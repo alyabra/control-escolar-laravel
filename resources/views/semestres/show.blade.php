@@ -17,10 +17,8 @@
         <livewire:boton-eliminar :dato="'eliminarSemestre'" :ideliminar="$semestre->id">
     </x-slot>
 
-    <div>
         <livewire:lista-clases :semestre="$semestre">
-    </div>
-    <div>
+    @can('create', App\Models\Clase::class)
         <livewire:formulario-agregar-clase :semestreid="$semestre->id">
-    </div>
+    @endcan
 </x-app-layout>

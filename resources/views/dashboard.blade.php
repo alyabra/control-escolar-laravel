@@ -65,7 +65,7 @@
             <x-responsive-link :href="route('cardex.index', auth()->user()->id)">
                 {{ __('Ver tus calificaciones') }}
             </x-responsive-link>
-            <x-responsive-link  :href="route('cardex.index', auth()->user()->id)">
+            <x-responsive-link  :href="route('clases.tareas')">
                 {{ __('Ver tareas') }}
             </x-responsive-link>
         </x-bloque-accion> 

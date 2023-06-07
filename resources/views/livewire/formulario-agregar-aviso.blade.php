@@ -24,5 +24,5 @@ class="w-2/3 bg-white rounded shadow-xl mx-auto p-4 my-2"
 <x-primary-button class="ml-4">
     {{ __('Guardar aviso') }}
 </x-primary-button>
-</div>
+
 </form>

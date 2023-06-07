@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
-use App\Models\User;
-use App\Models\Semestre;
-use App\Models\Estudiante;
+// use App\Models\User;
+// use App\Models\Materia;
+// use App\Models\Semestre;
+// use App\Models\Estudiante;
+use App\Models\Materia;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -33,10 +35,10 @@ class Clase extends Model
     {
         return $this->belongsTo(Semestre::class);
     }
-
-    public function getNombre() 
+    public function materia()
     {
-        return User::find($this->estudiante->estudiante_id)->name;
+        return $this->belongsTo(Materia::class);
     }
+
 
 }

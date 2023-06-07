@@ -1,10 +1,16 @@
-<x-guest-layout>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Iniciar sesion') }}
+        </h2>
+    </x-slot>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" class="w-3/4 mx-auto bg-white p-6 m-2 rounded shadow-md border border-slate-400">
         @csrf
-
+        <h2>Ingresa tus credecianles para ingresar al sistema</h2>
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -44,4 +50,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-app-layout>

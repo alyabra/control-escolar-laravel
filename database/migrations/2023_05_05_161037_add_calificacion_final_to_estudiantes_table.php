@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('estudiantes', function (Blueprint $table) {
-            $table->integer('calificacionFinal')->nullable()->default(null);;
+            $table->integer('parcial')->nullable()->default(null);
+            $table->integer('calificacionFinal')->nullable()->default(null);
         });
     }
 

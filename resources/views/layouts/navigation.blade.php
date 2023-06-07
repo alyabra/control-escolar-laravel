@@ -40,9 +40,6 @@
                                         <x-nav-link :href="route('login')">
                                             {{ __('Iniciar sesión') }}
                                         </x-nav-link>
-                                        <x-nav-link :href="route('login')">
-                                            {{ __('Crear cuenta') }}
-                                        </x-nav-link>
                                     </div>
                                 @endguest
 
@@ -113,9 +110,6 @@
                     @guest
                         <x-responsive-nav-link :href="route('login')">
                         {{ __('Iniciar sesión') }}
-                        </x-responsive-nav-link>
-                        <x-responsive-nav-link :href="route('register')">
-                            {{ __('Crear cuenta') }}
                         </x-responsive-nav-link>
                     @endguest
                 </div>

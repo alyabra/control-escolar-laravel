@@ -17,6 +17,6 @@
     <livewire:lista-estudiantes :clase="$clase">
 
     @can('create', App\Models\Clase::class)
-        <livewire:lista-alumnos :clase="$clase"/>
+        <livewire:formulario-agregar-estudiante :clase="$clase" />
     @endcan
 </x-app-layout>

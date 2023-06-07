@@ -25,9 +25,6 @@
             <x-slot name="title">
                 {{ __('Editar avisos') }}
             </x-slot>
-            <x-responsive-link :href="route('avisos.create')">
-                {{ __('Crear un aviso nuevo') }}
-             </x-responsive-link>
              <x-responsive-link :href="route('avisos.index')">
                 {{ __('Editar avisos') }}
              </x-responsive-link>

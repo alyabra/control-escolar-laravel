@@ -30,7 +30,6 @@ Route::get('/dashboard', function () {
 Route::get('/clases', [ClaseController::class, 'index'])->middleware(['auth','rol'])->name('clases.index');
 // TODO que reciba el id de la clase
 Route::get('/clases/tareas', [ClaseController::class, 'tareas'])->name('clases.tareas');
-Route::get('/clases/create', [ClaseController::class, 'create'])->middleware(['auth'])->name('clases.create');
 Route::get('/clases/{clase}', [ClaseController::class, 'show'])->middleware(['auth','rol'])->name('clases.show');
 Route::get('/clases/edit/{clase}', [ClaseController::class, 'edit'])->middleware(['auth','rol'])->name('clases.edit');
 
@@ -46,7 +45,6 @@ Route::middleware('auth')->group(function () {
 Route::get('profile/{user}', [EstudianteController::class, 'index'])->name('cardex.index');
 
 // Crear avisos
-Route::get('/avisos/create', [AvisoController::class, 'create'])->name('avisos.create');
 Route::post('/avisos/create', [AvisoController::class, 'store'])->name('avisos.store');
 Route::get('/avisos', [AvisoController::class, 'index'])->name('avisos.index');
 

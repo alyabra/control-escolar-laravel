@@ -11,7 +11,7 @@
                 </div>
             @endif
             <div class="flex justify-between px-2 {{$i % 2 == 0 ? 'bg-slate-100' : ''}}">
-                <p class="">{{$calificaciones[$i]->clase->nombre}}</p>
+                <p class="">{{$calificaciones[$i]->clase->materia->nombre}}</p>
                 <p class="w-10">{{$calificaciones[$i]->calificacionFinal}}</p>
             </div>
         @endfor

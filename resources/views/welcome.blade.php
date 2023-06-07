@@ -12,9 +12,9 @@
             <p>Si eres un pofresor podras registrar calificaciones de tus alumnos y agregar tareas</p>
             <p>Si eres estudiante podras revisar tu calificación y consultar tareas</p>
         </div>
-    <div class="flex w-5/6 mx-auto gap-2">
+    <div class="flex md:flex-row flex-col w-5/6 mx-auto gap-2">
         <livewire:lista-avisos>
-        <div class="bg-white mx-auto w-1/3 p-4 my-4 shadow-xl rounded flex flex-col gap-2">
+        <div class="bg-white mx-auto w-full md:w-1/3 p-4 my-4 shadow-xl rounded flex flex-col gap-2">
             <h2 class="text-center bg-slate-400">Informacion escolar</h2>
             <div class="border border-slate-500 p-2">
                 <ul>

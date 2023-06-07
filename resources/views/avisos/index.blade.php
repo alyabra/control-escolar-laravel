@@ -7,8 +7,7 @@
         </div>
     </x-slot>
 
-    <livewire:lista-avisos /> 
-    
     <livewire:formulario-agregar-aviso>
+    <livewire:lista-avisos /> 
 
 </x-app-layout>

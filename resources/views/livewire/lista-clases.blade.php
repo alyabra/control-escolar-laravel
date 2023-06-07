@@ -7,7 +7,7 @@
     @if ($clases->count()>0)
         @foreach ( $clases as $clase)
             <x-responsive-link :href="route('clases.show', $clase->id)">
-                <p>{{$clase->nombre}}</p>
+                <p>{{$clase->materia->nombre}}</p>
                 <p>{{$clase->user->name}}</p>
             </x-responsive-link>
         @endforeach

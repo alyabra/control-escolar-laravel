@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('clases', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
             $table->foreignId('user_id');
             $table->foreignId('materia_id');
-            $table->integer('creditos');
             $table->timestamps();
         });
     }

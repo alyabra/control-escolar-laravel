@@ -4,38 +4,38 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use App\Models\Clase;
+use App\Models\Materia;
 use Livewire\Component;
-use App\Models\Semestre;
 
 class FormularioAgregarClase extends Component
 {
     public $asignatura;
     public $docente;
+    public $materia;
     public $semestreid;
 
-
     protected $rules = [
-        'asignatura' => 'required|string',
-        'docente' => 'required|string',
+        'asignatura' => 'nullable',
+        'docente' => 'required',
+        'materia' => 'required',
     ];
 
     public function crearClase() {
-        // $ultimoSemestre = Semestre::latest('id')->first();
         $datos = $this->validate();
-        $clase = Clase::create([
-            'nombre' => $datos['asignatura'],
+        Clase::create([
             'user_id' => $datos['docente'],
-            'materia_id' => 1,
+            'materia_id' => $datos['materia'],
             'semestre_id' => $this->semestreid,
-            'creditos' => 12,
         ]);
         return redirect()->route('semestre.show', $this->semestreid);
     }
     public function render()
     {
+        $materias = Materia::all();
         $docentes = User::where('rol', 2)->get();
-        return view('livewire.crear-clase', [
-            'docentes' => $docentes
+        return view('livewire.formulario-agregar-clase', [
+            'docentes' => $docentes,
+            'materias' => $materias
         ]);
     }
 

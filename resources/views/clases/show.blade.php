@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="w-full flex justify-between">
-                <h2>Materia: <span class="font-bold">{{$clase->nombre}}</span></h2>
+                <h2>Materia: <span class="font-bold">{{$clase->materia->nombre}}</span></h2>
                 <p>Profesor asignado: <span class="font-bold">{{$clase->user->name}}</span></p>
             @can('create', App\Models\Clase::class)
             <a href="{{route('clases.edit', $clase->id)}}"

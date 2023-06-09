@@ -4,8 +4,7 @@
             {{ __('Historial academico') }}
         </h2>
     </x-slot>
-
     <div class="py-6">
-                <livewire:boleta />
+                <livewire:boleta :idEstudiante="$idEstudiante" />
     </div>
 </x-app-layout>

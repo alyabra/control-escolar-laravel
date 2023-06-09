@@ -27,13 +27,15 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // clases.index
-Route::get('/clases', [ClaseController::class, 'index'])->middleware(['auth','rol'])->name('clases.index');
+// Route::get('/clases', [ClaseController::class, 'index'])->middleware(['auth','rol'])->name('clases.index');
 // TODO que reciba el id de la clase
 Route::get('/clases/tareas', [ClaseController::class, 'tareas'])->name('clases.tareas');
-Route::get('/clases/{clase}', [ClaseController::class, 'show'])->middleware(['auth','rol'])->name('clases.show');
+Route::get('/clases/{clase}', [ClaseController::class, 'show'])->middleware(['auth','rol', 'can:view,clase'])->name('clases.show');
 Route::get('/clases/edit/{clase}', [ClaseController::class, 'edit'])->middleware(['auth','rol'])->name('clases.edit');
 
-Route::get('/clases/tareas', [ClaseController::class, 'tareas'])->name('clases.tareas');
+// PROFILE
+// PROFILE
+// PROFILE
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,21 +43,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Vista de alumno
-Route::get('profile/{user}', [EstudianteController::class, 'index'])->middleware(['auth'])->name('cardex.index');
+// Vista de alumno para la boleta
+Route::get('profile/{user}', [EstudianteController::class, 'index'])->middleware(['auth', 'VerBoletaEstudiante'])->name('cardex.index');
 
 // Crear avisos
 // TODOS: los metodos post requieren un middeware?
 Route::post('/avisos/create', [AvisoController::class, 'store'])->name('avisos.store');
-Route::get('/avisos', [AvisoController::class, 'index'])->middleware(['auth','rol'])->name('avisos.index');
+Route::get('/avisos', [AvisoController::class, 'index'])->middleware(['auth','rolAdmin'])->name('avisos.index');
 
 // Rutas de semestres
 Route::middleware('auth')->group(function () {
-    Route::get('/semestres', [SemestreController::class, 'index'])->middleware(['auth'])->name('semestre.index');
-    Route::get('/semestres/create', [SemestreController::class, 'create'])->middleware(['rol'])->name('semestre.create');
-    Route::post('/semestres/create', [SemestreController::class, 'store'])->middleware(['rol'])->name('semestre.store');
-    Route::get('/semestres/{semestre}', [SemestreController::class, 'show'])->name('semestre.show');
-    Route::get('/semestres/edit/{semestre}', [SemestreController::class, 'edit'])->middleware(['rol'])->name('semestre.edit');
+    Route::get('/semestres', [SemestreController::class, 'index'])->middleware(['rol'])->name('semestre.index');
+    Route::get('/semestres/create', [SemestreController::class, 'create'])->middleware(['rolAdmin'])->name('semestre.create');
+    Route::post('/semestres/create', [SemestreController::class, 'store'])->middleware(['rolAdmin'])->name('semestre.store');
+    Route::get('/semestres/{semestre}', [SemestreController::class, 'show'])->middleware(['rol'])->name('semestre.show');
+    Route::get('/semestres/edit/{semestre}', [SemestreController::class, 'edit'])->middleware(['rolAdmin'])->name('semestre.edit');
+    Route::Post('/semestres/edit/{semestre}', [SemestreController::class, 'edit'])->middleware(['rolAdmin'])->name('semestre.update');
 });
 
 

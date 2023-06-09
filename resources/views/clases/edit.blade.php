@@ -4,5 +4,5 @@
             {{ __('Editar clase') }}
         </h2>
     </x-slot>
-        <livewire:crear-clase />
+        <livewire:formulario-editar-clase :clase="$clase">
 </x-app-layout>

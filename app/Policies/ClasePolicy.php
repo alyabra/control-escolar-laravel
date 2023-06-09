@@ -21,8 +21,9 @@ class ClasePolicy
      */
     public function view(User $user, Clase $clase): bool
     {
-        //
-    }
+        $canI = ($user->id === $clase->user->id || $user->rol === 1);
+        return $canI ;
+    } 
 
     /**
      * Determine whether the user can create models.
@@ -73,5 +74,10 @@ class ClasePolicy
     public function editarCalificacion(User $user): bool
     {
         return $user->rol === 2 ;
+    }
+    public function verTusCalicaciones(User $user): bool
+    {
+        $canI = ($user->rol === 1 || $user->id === auth()->user()->id);
+        return $canI ;
     }
 }

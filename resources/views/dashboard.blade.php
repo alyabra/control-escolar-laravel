@@ -10,9 +10,6 @@
             <x-slot name="title">
                 {{ __('Edición de clases y semestres') }}
             </x-slot>
-             {{-- <x-responsive-link :href="route('clases.index')">
-                {{ __('Editar clases') }}
-             </x-responsive-link> --}}
              <x-responsive-link :href="route('semestre.create')">
                 {{ __('Registrar nuevo semestre') }}
              </x-responsive-link>
@@ -38,8 +35,8 @@
                 {{ __('Registrar administradores') }}
              </x-responsive-link>
         </x-bloque-accion>
-
     @endcan
+    
     {{-- Vista de profesor --}}
     @can('editarCalificacion',  App\Models\Clase::class)
         <x-bloque-accion >

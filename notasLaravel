@@ -22,3 +22,9 @@ SEEDERS
 >sail artisan make:seeder <NombreSeeder>
 Ejecutar seeder
 >sail artisan db:seed --class=RegistrosSeeder
+
+>MIDDLEWARE
+    Se regsitran en el kernel
+
+--POLICYES
+sail artisan make:policy VacantePolicy --model=Vacante

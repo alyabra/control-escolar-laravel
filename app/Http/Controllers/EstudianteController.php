@@ -10,9 +10,11 @@ class EstudianteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(User $user)
+    public function index(Request $request, $idEstudiante)
     {
-            return view('profile.cardex');
+        return view('profile.cardex', [
+            'idEstudiante' =>$idEstudiante
+        ]);
     }
 
     /**

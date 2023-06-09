@@ -1,5 +1,5 @@
 {{-- Para usar este componente se necesita el id del dato y ademas el nombre del evento que se va emitir el cual recibe el id --}}
-<button class=" place-content-center"
+<button class="place-content-center"
 wire:click="$emit('alertar', {{$ideliminar}}, '{{$dato}}')"
 >
 <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-full">

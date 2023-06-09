@@ -14,7 +14,9 @@
             </div>
            @endcan
         </div>
-        <livewire:boton-eliminar :dato="'eliminarSemestre'" :ideliminar="$semestre->id">
+        @can('create', App\models\Clase::class)
+            <livewire:boton-eliminar :dato="'eliminarSemestre'" :ideliminar="$semestre->id">        
+        @endcan
     </x-slot>
 
         <livewire:lista-clases :semestre="$semestre">

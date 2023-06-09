@@ -2,9 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Clase;
 use Livewire\Component;
-use App\Models\Semestre;
 use App\Models\Estudiante;
 
 class Boleta extends Component
@@ -13,10 +11,12 @@ class Boleta extends Component
     public $i;
     public $longitud;
     public $estudiantes;
+    public $idEstudiante;
 
     public function render()
     {
-        $this->calificaciones = Estudiante::where('user_id', auth()->user()->id)->get();
+        // $estudiante = User::find($this->idEstudiante);
+        $this->calificaciones = Estudiante::where('user_id', $this->idEstudiante)->get();
         $this->longitud=count($this->calificaciones);
 
         return view('livewire.boleta');

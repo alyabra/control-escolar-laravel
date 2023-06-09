@@ -55,6 +55,7 @@ class SemestreController extends Controller
      */
     public function edit(Semestre $semestre)
     {
+        
         return view('semestres.edit', [
             'semestre' => $semestre
         ]);

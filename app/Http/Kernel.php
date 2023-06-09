@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\VerBoletaEstudiante;
 use App\Http\Middleware\VerificalRol;
 use App\Http\Middleware\VerificaRolAdmi;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -67,5 +68,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'rol' => VerificalRol::class,
         'rolAdmin' => VerificaRolAdmi::class,
+        'VerBoletaEstudiante' => VerBoletaEstudiante::class,
     ];
 }

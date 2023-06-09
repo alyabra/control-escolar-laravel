@@ -11,8 +11,8 @@ class ListaAvisos extends Component
 
     public function eliminarAviso(Aviso $aviso) {
         $aviso->delete();
-        $this->render();
     }
+    
     public function render()
     {
         $avisos = Aviso::orderBy('created_at', 'desc')->paginate(4);

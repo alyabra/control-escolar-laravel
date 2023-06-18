@@ -11,6 +11,7 @@
             @endcan
         </div>
     </x-slot>
-
     <livewire:lista-semestre>    
+    <livewire:formulario-agregar-semestre>
+
 </x-app-layout>

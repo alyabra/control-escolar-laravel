@@ -36,7 +36,7 @@ class SemestreController extends Controller
             'fecha_inicio' => $request->fecha_inicio,
             'fecha_fin' => $request->fecha_fin,
         ]);
-        return redirect('/');
+        return redirect('/semestres');
     }
 
     /**

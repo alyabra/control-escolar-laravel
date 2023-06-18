@@ -14,10 +14,11 @@
             </div>
            @endcan
         </div>
-        @can('create', App\models\Clase::class)
+        {{-- @can('create', App\models\Clase::class)
             <livewire:boton-eliminar :dato="'eliminarSemestre'" :ideliminar="$semestre->id">        
-        @endcan
+        @endcan --}}
     </x-slot>
+    
 
         <livewire:lista-clases :semestre="$semestre">
     @can('create', App\Models\Clase::class)

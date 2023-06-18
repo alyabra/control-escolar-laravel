@@ -18,4 +18,5 @@
         <p>Inicio: <span class="font-bold">Aun no hay semestre registrados, registra semestres y se veran aquí</span></p>
     </div>
     @endif
+    {{$semestres->links()}}
 </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AvisoController;
+use App\Http\Controllers\CalificacionController;
 use App\Http\Controllers\ClaseController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SemestreController;
@@ -45,6 +46,10 @@ Route::middleware('auth')->group(function () {
 
 // Vista de alumno para la boleta
 Route::get('profile/{user}', [EstudianteController::class, 'index'])->middleware(['auth', 'VerBoletaEstudiante'])->name('cardex.index');
+
+// Vista de boleta
+Route::get('/boletas', [CalificacionController::class, 'index'])->middleware(['auth','rol'])->name('boleta.index');
+
 
 // Crear avisos
 // TODOS: los metodos post requieren un middeware?

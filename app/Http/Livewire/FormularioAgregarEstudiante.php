@@ -4,9 +4,6 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use App\Models\Clase;
 use Livewire\Component;
-use App\Models\Estudiante;
-use Illuminate\Validation\Rule;
-use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Database\QueryException;
 
 class FormularioAgregarEstudiante extends Component

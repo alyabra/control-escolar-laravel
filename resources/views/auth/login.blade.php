@@ -8,7 +8,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}" class="w-3/4 mx-auto bg-white p-6 m-2 rounded shadow-md border border-slate-400">
+    <form method="POST" action="{{ route('login') }}" class="max-w-lg mx-auto bg-white p-6 m-2 rounded shadow-md border border-slate-400">
         @csrf
         <h2>Ingresa tus credecianles para ingresar al sistema</h2>
         <!-- Email Address -->

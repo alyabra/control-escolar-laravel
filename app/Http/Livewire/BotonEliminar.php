@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Aviso;
 use App\Models\Clase;
 use Livewire\Component;
 use App\Models\Semestre;

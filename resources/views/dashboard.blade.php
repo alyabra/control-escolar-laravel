@@ -8,7 +8,7 @@
     @can('create', App\Models\Clase::class)
         <x-bloque-accion >
             <x-slot name="title">
-                {{ __('Edición de clases y semestres') }}
+                {{ __('Editar semestres') }}
             </x-slot>
              <x-responsive-link :href="route('semestre.create')">
                 {{ __('Registrar nuevo semestre') }}
@@ -35,6 +35,18 @@
                 {{ __('Registrar administradores') }}
              </x-responsive-link>
         </x-bloque-accion>
+
+        <x-bloque-accion >
+            <x-slot name="title">
+                {{ __('Ver calificaciones de estudiantes') }}
+            </x-slot>
+            <x-responsive-link :href="route('boleta.index')">
+                {{ __('Ir a lista de estudiantes') }}
+            </x-responsive-link>
+            {{-- <x-responsive-link  :href="route('clases.tareas')">
+                {{ __('Ver tareas') }}
+            </x-responsive-link> --}}
+        </x-bloque-accion> 
     @endcan
     
     {{-- Vista de profesor --}}
@@ -53,19 +65,20 @@
     @endcan
 
     {{-- Vista de alumnos --}}
-
-    @cannot('editarCalificacion', App\Models\Clase::class)
-        <x-bloque-accion >
-            <x-slot name="title">
-                {{ __('Ver calificaciones y tareas') }}
-            </x-slot>
-            <x-responsive-link :href="route('cardex.index', auth()->user()->id)">
-                {{ __('Ver tus calificaciones') }}
-            </x-responsive-link>
-            <x-responsive-link  :href="route('clases.tareas')">
-                {{ __('Ver tareas') }}
-            </x-responsive-link>
-        </x-bloque-accion> 
+    @cannot('create', App\Models\Clase::class)
+        @cannot('editarCalificacion', App\Models\Clase::class)
+            <x-bloque-accion >
+                <x-slot name="title">
+                    {{ __('Ver calificaciones y tareas') }}
+                </x-slot>
+                <x-responsive-link :href="route('cardex.index', auth()->user()->id)">
+                    {{ __('Ver tus calificaciones') }}
+                </x-responsive-link>
+                <x-responsive-link  :href="route('clases.tareas')">
+                    {{ __('Ver tareas') }}
+                </x-responsive-link>
+            </x-bloque-accion> 
+        @endcannot
     @endcannot
 
 
